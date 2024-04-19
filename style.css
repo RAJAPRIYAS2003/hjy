@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100;200&family=Barlow+Condensed:wght@200;300&family=Barlow:wght@300&family=Bellefair&family=Figtree:wght@300;400;500;600&family=Heebo&family=Kaushan+Script&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;1,6..12,200&family=Open+Sans:wght@300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
+}
+:root{
+    --font-family-: 'Figtree', sans-serif;
+    --border-color-:rgb(128, 125, 125);
+}
+nav .navcontainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background:rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgb(128, 125, 125);
+}
+nav .navcontainer .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav .navcontainer .logo img{
+    width: 45px;
+}
+nav .navcontainer .logo h3{
+    font-size: 17px;
+    color: white;
+    letter-spacing: .5px;
+}
+nav .navcontainer ul{
+    display: flex;
+    transition: 0.5 ease-in-out;
+}
+nav .navcontainer ul li{
+    list-style-type: none;
+    padding: 0 15px;
+}
+nav .navcontainer ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    letter-spacing: .6px;
+}
+#menubtn{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    background-color: var(--text-color-1);
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 60%);
+    z-index: 10;
+    display: none;
+    border: 1px solid rgb(128, 125, 125);
+    
+  }
+  @media only screen and (max-width:500px) and (min-width:200px) {
+    #menubtn{
+        display: block;
+        z-index: 100;
+        position: fixed;
+    }
+    nav .navcontainer{
+        padding: 10px;
+    }
+    nav .navcontainer ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
+        width: 50%;
+        right: -50%;
+        transition: 0.3s ease-in-out;
+    }
+    nav .navcontainer ul li{
+        padding: 30px 30px;
+    }
+    nav .navcontainer ul li a{
+       
+        font-size: 20px;
+    }
+    nav .navcontainer ul.show{
+        right: 0;
+    }
+  }
+
+  /*....................................header...............................*/
+
+    #home-container{
+    background: url(images/lap-bg.jpg);
+    min-width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   #home-container::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+  }
+  #home-container .home-component{
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+  .home-component h1{
+    font-size: 55px;
+  }
+  #home-container .home-component p{
+    font-size: 35px;
+  }
+  #home-container .home-component .text{
+    letter-spacing: 1px;
+  }
+
+  #home-container .home-component a{
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    text-transform: uppercase;
+    padding: 15px 40px; 
+    letter-spacing: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5 ease-in-out;
+   color: white;
+   
+}
+.home-component a:hover{
+    z-index: 100;
+    background-color: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+                -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  
+}
+
+.home-component a span{
+    position: absolute;
+    display: block;
+}
+.home-component a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+.home-component a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4) ;
+    animation: animate2 1s infinite;
+    animation-delay: .25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+.home-component a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4) ;
+    animation: animate3 1s infinite;
+    animation-delay: .5s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+.home-component a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4) ;
+    animation: animate4 1s infinite;
+    animation-delay: .75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 100%;
+    }
+}
+@media only screen and (max-width:500px) and (min-width:200px){
+    .home-component h1{
+        font-size: 35px;
+      }
+      #home-container .home-component p{
+        font-size: 22px;
+        margin: 10px 0;
+      }
+      #home-container .home-component a{
+        font-size: 17px;
+      }
+}
+/*......................home-container.....................*/
+#about .about-container{
+    width: 100%;
+    display: flex;
+    padding: 0px 10px;
+    gap: 20px;
+    margin-top: 50px;
+
+}
+#about .about-container .about-left{
+    width: 50%;
+}
+#about .about-container .about-left #video{
+    width: 100%;
+    
+}
+
+#about .about-container .about-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about .about-container .about-right h3{
+    text-align: center;
+}
+#about .about-container .about-right button{
+    
+}
+@media only screen and (max-width:500px) and (min-width:200px){
+    #about .about-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #about .about-container .about-left{
+        width: 100%;
+    }
+    #about .about-container .about-left #video{
+        width: 100%;
+        
+    }
+    
+    #about .about-container .about-right{
+        width: 100%;
+    }
+}
